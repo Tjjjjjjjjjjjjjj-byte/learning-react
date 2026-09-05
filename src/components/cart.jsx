@@ -1,7 +1,7 @@
-function Cart() {
+function Cart( {isOpen} ) {
   return (
     <>
-      <aside class="cart-window hidden">
+      <aside className={isOpen ? "cart-window" : "cart-window hidden"}>
         <div class="cart-header">
           <h2>Your Cart</h2>
 
@@ -20,7 +20,7 @@ function Cart() {
 
         <div class="cart-footer">
           <div class="cart-total">
-            <span>TotFFal</span>
+            <span>Total</span>
 
             <strong class="total-price"> $0.00 </strong>
           </div>

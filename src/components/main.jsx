@@ -2,7 +2,7 @@ import { useState } from "react";
 function Main(){
     const categories = ['All', 'Electronics', 'Clothing', 'Jewelry', 'Accessories']
     const [activeCategory, setActiveCategory] = useState("All");
-    
+
     return(
         <main>
         <section class="products-section">
@@ -36,7 +36,7 @@ function Main(){
           </div>
 
           <div class="products">
-            
+            <div></div>
           </div>
 
           <div class="loading hidden">Loading products...</div>
