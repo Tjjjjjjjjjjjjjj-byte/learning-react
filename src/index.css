@@ -389,10 +389,10 @@ nav {
     gap: var(--space-xl);
     border-bottom: 1px solid var(--border);
     margin-bottom: var(--space-xl);
-    overflow-x: auto;
 }
 
 .category {
+    margin-left: 4px;
     position: relative;
     background: none;
     border: none;

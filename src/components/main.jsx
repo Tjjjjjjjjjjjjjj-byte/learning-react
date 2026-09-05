@@ -1,4 +1,7 @@
+import { useState } from "react";
 function Main(){
+    const categories = ['All', 'Electronics', 'Clothing', 'Jewelry', 'Accessories']
+    const [activeCategory, setActiveCategory] = useState("All");
     
     return(
         <main>
@@ -21,19 +24,19 @@ function Main(){
           </div>
 
           <div class="category-list">
-            <button class="category active">All</button>
-
-            <button class="category">Electronics</button>
-
-            <button class="category">Clothing</button>
-
-            <button class="category">Jewelry</button>
-
-            <button class="category">Accessories</button>
+            {categories.map((cat) => (
+                <button 
+                key={cat}
+                className={cat === activeCategory ? "category active" : "category"}
+                onClick={() => setActiveCategory(cat)}
+                >
+                    {cat}
+                </button>
+            ))}
           </div>
 
           <div class="products">
-            {/* <!-- Products will be created with JavaScript --> */}
+            
           </div>
 
           <div class="loading hidden">Loading products...</div>
