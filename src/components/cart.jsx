@@ -1,11 +1,11 @@
-function Cart( {isOpen} ) {
+function Cart( {isOpen, onCartToggle} ) {
   return (
     <>
       <aside className={isOpen ? "cart-window" : "cart-window hidden"}>
         <div class="cart-header">
           <h2>Your Cart</h2>
 
-          <button class="close-cart">×</button>
+          <button class="close-cart" onClick={onCartToggle}>×</button>
         </div>
 
         <div class="cart-items">
