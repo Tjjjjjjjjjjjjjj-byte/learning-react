@@ -2,7 +2,7 @@ import Nav from "../components/nav";
 import Main from "../components/main";
 import Cart from "../components/cart";
 import { useState } from "react";
-function Shop() {
+function Shop( {products} ) {
   const [isCartOpen, setIsCartOpen] = useState(false);
   return (
     <>
@@ -11,7 +11,7 @@ function Shop() {
           setIsCartOpen(!isCartOpen);
         }}
       />
-      <Main />
+      <Main products={products} />
       <Cart
         isOpen={isCartOpen}
         onCartToggle={() => {

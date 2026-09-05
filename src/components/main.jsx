@@ -1,5 +1,7 @@
+import ProductCard from "./product";
 import { useState } from "react";
-function Main(){
+function Main({ products, addToCart }) {
+
     const categories = ['All', 'Electronics', 'Clothing', 'Jewelry', 'Accessories']
     const [activeCategory, setActiveCategory] = useState("All");
 
@@ -35,8 +37,10 @@ function Main(){
             ))}
           </div>
 
-          <div class="products">
-            <div></div>
+          <div className="products">
+            {products.map((product) => (
+              <ProductCard product={product} onAddToCart={addToCart} key={product.id} />
+            ))}
           </div>
 
           <div class="loading hidden">Loading products...</div>
