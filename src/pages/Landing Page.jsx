@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function Landingpage() {
 
   return(
@@ -11,7 +12,7 @@ function Landingpage() {
           Browse our latest products and find something that's right for you.
         </p>
 
-        <a href="/Shop.jsx" className="shop-now-btn">Shop now</a>
+        <Link className="shop-now-btn" to="/Shop">Shop Now!</Link>
 
         <p>
           A Seller? Take a look at your statistics!
