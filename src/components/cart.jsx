@@ -1,22 +1,31 @@
-function Cart( {isOpen, onCartToggle} ) {
+function Cart({ isOpen, onCartToggle, items }) {
   return (
     <>
       <aside className={isOpen ? "cart-window" : "cart-window hidden"}>
         <div class="cart-header">
           <h2>Your Cart</h2>
 
-          <button class="close-cart" onClick={onCartToggle}>×</button>
+          <button class="close-cart" onClick={onCartToggle}>
+            ×
+          </button>
         </div>
 
-        <div class="cart-items">
-          {/* <!-- Cart items will be created with JavaScript --> */}
-        </div>
-
-        <div class="cart-empty">
-          <h3>Your cart is empty</h3>
-
-          <p>Add some products to get started.</p>
-        </div>
+        {items.length > 0 ? (
+          <div className="cart-items">
+            {items.map((item) => (
+              <div className="cart-item" key={item.id}>
+                <span>{item.name}</span>
+                <span>${item.price}</span>
+                <button>Remove</button>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="cart-empty">
+            <h3>Your cart is empty</h3>
+            <p>Add some products to get started.</p>
+          </div>
+        )}
 
         <div class="cart-footer">
           <div class="cart-total">
@@ -41,4 +50,4 @@ function Cart( {isOpen, onCartToggle} ) {
     </>
   );
 }
-export default Cart
+export default Cart;

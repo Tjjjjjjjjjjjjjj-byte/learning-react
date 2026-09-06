@@ -1,4 +1,4 @@
-function Nav({onCartToggle}) {
+function Nav({onCartToggle, items}) {
   return (
     <nav>
       <div className="nav-left">
@@ -17,7 +17,7 @@ function Nav({onCartToggle}) {
         onClick={onCartToggle}
         >
           Cart
-          <span className="cart-count">0</span>
+          <span className="cart-count">{items.length}</span>
         </button>
       </div>
     </nav>
